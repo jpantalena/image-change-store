@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Image Change Shop</title>
+
+		<style type="text/css">
+			@import url("https://fonts.googleapis.com/css?family=Raleway:300,700");
+
+			.thumbnail{
+				height: 100%;
+				width:100%;
+			}
+
+			#img {
+				display: block;
+			}
+
+			img{
+				width: 300px;
+				height: 200px;
+			}
+
+			img:hover {
+			  cursor:pointer;
+			}
+
+			.thumb{
+				width: 95px;
+				height: 62px;
+				display: inline-block;
+				margin:2.5px;
+				padding: 2.5px;
+				text-align: center;
+			}
+
+			.thumb.picked{
+				width: 93px;
+				height: 60px;
+				border: solid  #2eb8b8;
+				border-width: 1px;
+				border-radius: 5px;
+				display: inline-block;
+				margin:2.5px;
+				padding: 2.5px;
+				opacity: 0.7;
+				text-align: center;
+			}
+
+			.row{
+				height: 73px;
+			}
+
+			p{
+				font-family: "Raleway", Helvetica, Arial, sans-serif;
+			}
+			
+			h1, h2, h3 {
+				font-family: "Raleway", Helvetica, Arial, sans-serif;
+				font-weight: 700;
+				letter-spacing: 0.07em;
+				line-height: 2;
+				margin: 0;
+				text-transform: uppercase;
+			}
+
+
+		</style>
+
+	</head>
+
+	<body>
+
+		<!-- Header -->
+			<h1>Image Changer</h1>
+			<h2>Can be used for E-Commerce store</h2>
+			<p>Built on JavaScript. Change image src and put in your own images</p>
+
+		<!--Product Images-->
+				
+				<img id="img" src="http://www.clipartbest.com/cliparts/9TR/gy5/9TRgy5Aec.jpeg" alt="" /></span>
+
+				
+					<!--Image1-->
+					<div class="row">
+						
+							<div class="thumb picked">
+								<img class="thumbnail" src="http://www.clipartbest.com/cliparts/9TR/gy5/9TRgy5Aec.jpeg" onclick='changeImage("http://www.clipartbest.com/cliparts/9TR/gy5/9TRgy5Aec.jpeg");'>
+							</div>
+						
+					
+					<!--Image2-->
+					
+						
+							<div class="thumb">
+								<img class="thumbnail" src="http://www.drodd.com/images15/2-1.png" onclick='changeImage("http://www.drodd.com/images15/2-1.png");'>
+							</div>
+						
+					
+					<!--Image3-->
+					
+						
+							<div class="thumb">
+								<img class="thumbnail" src="http://gdbaif.com/images/3/3-09.jpg" onclick='changeImage("http://gdbaif.com/images/3/3-09.jpg");'>
+							</div>
+								
+					</div>
+
+					<!--Image4-->
+					<div class="row">
+						
+							<div class="thumb">
+								<img class="thumbnail" src="http://3.bp.blogspot.com/-9cSZuRMO65M/UOYn20oxGUI/AAAAAAAALgg/zTyw-uLPkO8/s1600/number4.jpg" onclick='changeImage("http://3.bp.blogspot.com/-9cSZuRMO65M/UOYn20oxGUI/AAAAAAAALgg/zTyw-uLPkO8/s1600/number4.jpg");'>
+							</div>
+						
+					
+					<!--Image5-->
+					
+						
+							<div class="thumb">
+								<img class="thumbnail" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Channel_5_logo_2011.svg/2000px-Channel_5_logo_2011.svg.png" onclick='changeImage("https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Channel_5_logo_2011.svg/2000px-Channel_5_logo_2011.svg.png");'>
+							</div>
+						
+					<!--Image6-->
+						
+							<div class="thumb">
+								<img class="thumbnail" src="http://www.viewmichiganhomes.com/agent_files/6.png" onclick='changeImage("http://www.viewmichiganhomes.com/agent_files/6.png");'>
+							</div>
+						
+					</div>
+
+		<!-- Scripts -->
+			<script type="text/javascript">
+				//changes selected thumbail image to the main image
+				function changeImage(a) {
+	        		document.getElementById("img").src=a;
+	   			}
+
+				var thumbs = document.getElementsByClassName('thumb');
+
+	   			for (var i = 0; i < thumbs.length; i++) {
+	  				thumbs[i].addEventListener('click', pickAThumb);
+	  			}
+
+	  			//styles the clicked thumbnail image
+				function pickAThumb(e) {
+		  			resetThumbs();
+		  			e.target.parentElement.className = 'thumb picked';
+				}
+
+				//clears the thumbnail styling for pickAThumb(e) function
+				function resetThumbs() {
+				  for (var i = 0; i < thumbs.length; i++) {
+				  	thumbs[i].className = 'thumb';
+					}
+				}
+			</script>
+		
+	</body>
+</html>
